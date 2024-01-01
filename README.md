@@ -36,6 +36,8 @@ Bir ülkenin iklim değişikliği etkilerine maruz kalma durumunu değerlendirir
 
 ![bargraph](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/1a1aacb5-0485-4dfa-8cd7-2df7300162e8)
 
+Burada Dünya genelinde en iyi 20 ülke Kalite ve Güvenlik konusunda görselleştirilmiştir bu ülkelerden Kalite ve güvenlik başlıgında en iyi ülkeler Kanada, Danimarka ve ABD çıkmıştır
+
 ![bargraph2](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/9e13fb33-803b-4572-b1f8-786f040b8e81)
 
 
