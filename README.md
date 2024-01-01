@@ -4,7 +4,7 @@ Bu çalışma, Eskişehir Teknik Üniversitesi Veri Görselleştirme dersi çer�
 
 
 
-# Veri Seti
+## Veri Seti
 
 [Bu veri seti](https://impact.economist.com/sustainability/project/food-security-index/), 2022 yılında dünya genelindeki 113 ülkede gıda güvenliği performansını değerlendirmek amacıyla oluşturulmuştur. Değerlendirme, beş ana başlık altında gerçekleştirilmiştir:
 
@@ -19,4 +19,13 @@ Ortalama diyetlerin çeşitliliğini ve besin kalitesini, aynı zamanda gıdanı
 
 #### Sürdürülebilirlik ve Adaptasyon: 
 Bir ülkenin iklim değişikliği etkilerine maruz kalma durumunu değerlendirir; doğal kaynak risklerine duyarlılığını ölçer; ve ülkenin bu risklere nasıl adapte olduğunu değerlendirir.
+
+Çalışmada şu adımlar izlenmiştir:
+
+
+- 113 ülkenin Sürdürülebilirlik ve Adaptasyon, Kalite ve Güvenlik, Erişilebilirlik, Uygunluk başlıklarındaki değerlerinin ortalaması alınarak Genel Skor oluşturulmuş ve bu Genel Skor, Dünya Haritası Grafiği ile görselleştirilmiştir.
+- Kalite ve güvenlik konusunda En iyi 20 ülke ve En kötü 20 ülke bar grafiği ile görselleştirilmiştir
+- Ülkeler kıtalarına göre yeni bir değişken olarak tanımlanmış ve kıtalara göre gıda erişilebilirliği kutu grafiği ile görselleştirilmiştir
+- Gıdanın uygun oldugu ülkeler Lolipop grafiği ile görselleştirilmiştir
+- Sürdürülebilirlik ve Adaptasyon en iyi 10 ve en kötü 10 ülke olarak incelenmişt ve görselleştirilmiştir
 
