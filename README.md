@@ -40,10 +40,22 @@ Burada Dünya genelinde en iyi 20 ülke Kalite ve Güvenlik konusunda görselle�
 
 ![bargraph2](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/9e13fb33-803b-4572-b1f8-786f040b8e81)
 
+Burada ise genelinde en kötü 20 ülke Kalite ve Güvenlik konusunda görselleştirilmiştir bu ülkelerden en kötüleri sırasıyla Madagaskar, Haiti ve Gine olmuştur 
+
+
+
+![dunyaharitasi](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/0c4fbe29-5eda-4650-80cd-4ba4330f0611)
+
+
+
+![boxplot orange](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/6eb5fdf7-4f7f-4f66-aef3-1555d80506b5)
 
 
 
 
+![scatter plot](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/a55e759e-85bd-411e-aee1-e0ee85681763)
 
+
+![00031](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/3671c8a1-b98c-4cfe-9856-034b29e85167)
 
 
