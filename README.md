@@ -8,15 +8,15 @@ Bu çalışma, Eskişehir Teknik Üniversitesi Veri Görselleştirme dersi çer�
 
 [Bu veri seti](https://impact.economist.com/sustainability/project/food-security-index/), 2022 yılında dünya genelindeki 113 ülkede gıda güvenliği performansını değerlendirmek amacıyla oluşturulmuştur. Değerlendirme, beş ana başlık altında gerçekleştirilmiştir:
 
-### Uygunluk: 
+#### Uygunluk: 
 Tüketicilerin gıda satın alma yeteneğini, fiyat şoklarına karşı duyarlılıklarını ve şoklar meydana geldiğinde tüketicilere destek olacak programların ve politikaların varlığını ölçer.
 
-### Erişilebilirlik: 
+#### Erişilebilirlik: 
 Tarımsal üretimi ve çiftlik kapasitelerini, arz kesintisi riskini, gıda dağıtımını sağlama kapasitesini ve tarımsal üretimi genişletme çabalarını ölçer.
 
-### Kalite ve Güvenlik:
+#### Kalite ve Güvenlik:
 Ortalama diyetlerin çeşitliliğini ve besin kalitesini, aynı zamanda gıdanın güvenliğini ölçer.
 
-### Sürdürülebilirlik ve Adaptasyon: 
+#### Sürdürülebilirlik ve Adaptasyon: 
 Bir ülkenin iklim değişikliği etkilerine maruz kalma durumunu değerlendirir; doğal kaynak risklerine duyarlılığını ölçer; ve ülkenin bu risklere nasıl adapte olduğunu değerlendirir.
 
