@@ -30,7 +30,48 @@ Bir ülkenin iklim değişikliği etkilerine maruz kalma durumunu değerlendirir
 - Sürdürülebilirlik ve Adaptasyon en iyi 10 ve en kötü 10 ülke olarak incelenmişt ve görselleştirilmiştir
 
 
-# Grafikler 
+# Paketler
+```{r, message=FALSE, warning=FALSE}
+install.packages("ggplot2")
+install.packages("tidyverse")
+install.packages("dplyr")
+install.packages("devtools")
+install.packages("sf")
+install.packages("tidyverse")
+install.packages("ggridges")
+install.packages("MetBrewer")
+install.packages("ggflags", repos = c(
+  "https://jimjam-slam.r-universe.dev",
+  "https://cloud.r-project.org"))
+install.packages("ggflags")
+install.packages("countrycode")
+install.packages("ggimage")
+install.packages("countrycode")
+install.packages("ggflags")
+install.packages("geodata")
+install.packages("patchwork")
+install.packages("MetBrewer")
+library(MetBrewer)
+library(patchwork)
+library(countrycode)
+library (ggflags)
+library (geodata)
+library(ggimage)
+library(countrycode)
+library(ggflags)
+library(MetBrewer)
+library(ggridges)
+library(sf)
+library(devtools)
+library(gridExtra)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(maps)
+```
+## Grafikler
+
+### Dünya Haritası Grafiği
 ```
 gfsi$score_category <- cut(gfsi$`Overall score`, breaks = c(30, 40, 50, 60, 70, 80, 90, 100),
                            labels = c("30-40", "40-50", "50-60", "60-70", "70-80", "80-90", "90+"),
@@ -87,6 +128,28 @@ Dünya çapında kalite ve güvenlik konularında öne çıkan en üst 20 ülke,
 ![bargraph2](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/9e13fb33-803b-4572-b1f8-786f040b8e81)
 
 Dünya genelinde kalite ve güvenlik konularında zayıf performans gösteren en kötü 20 ülke, ilgi çekici grafiklerle ele alınmıştır. Bu bağlamda, kalite ve güvenlik başlıklarında en düşük performans sergileyen ülkeler sıralamasında öne çıkanlar Madagaskar, Haiti ve Gine olmuştur. Bu ülkeler, uluslararası standartlarda daha fazla çaba harcama gerekliliği olan alanlarda, kalite ve güvenlik konularında gelişim imkanlarına odaklanmak zorundadır
+
+### Kutu Grafiği
+```{r}
+gfsi$iso2 <- countrycode(gfsi$Country, "country.name", "iso2c")
+gfsi$continent <- countrycode(gfsi$iso2, "iso2c", "continent")
+
+gfsi$continent[gfsi$continent == "Americas"] <- "Amerika (21)"
+gfsi$continent[gfsi$continent == "Asia"] <- "Asya (32)"
+gfsi$continent[gfsi$continent == "Europe"] <- "Avrupa (26)"
+gfsi$continent[gfsi$continent == "Oceania"] <- "Okyanusya (2)"
+gfsi$continent[gfsi$continent == "Africa"] <- "Afrika (32)"
+
+
+ggplot(gfsi, aes(x = Affordability, y = continent, fill = continent)) +
+  geom_boxplot(lwd = 1, col = "black") + 
+  labs(title = "Kıtalara Göre Kutu Grafiği", 
+       y = "Kıta", x = "Gıda Satın Alma Gücü") +
+  scale_fill_manual(values = rep("orange", length(unique(gfsi$continent)))) +  
+  theme_classic() +
+  facet_wrap(~continent, scales = "free", ncol = 1) +
+  theme(legend.position = "none", strip.text = element_blank())
+```  
 
 ![gıdasatın](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/d5050e3a-ead8-4537-8205-67a2651a46c5)
 
