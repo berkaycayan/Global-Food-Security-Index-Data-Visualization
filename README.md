@@ -119,6 +119,7 @@ ggplot() +
 ```
 ![dunyaharitasi](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/0c4fbe29-5eda-4650-80cd-4ba4330f0611)
 
+Bu grafikte, kalite, güvenlik, sürdürülebilirlik, erişilebilirlik ve uygun fiyat kriterlerinde 113 ülkenin performansını değerlendirmek üzere genel skorlar oluşturulmuştur. Bu genel skorlar, her bir kriterin ortalaması alınarak elde edilmiştir. Bu kapsamlı analiz, ülkelerin genel sıralamasını belirlemede önemli bir ölçüt sunmaktadır 
 ### Bar Grafikleri
 ```{r}
 gfsi <- data2 %>% 
@@ -142,12 +143,33 @@ gfsi + scale_fill_manual(values = my_palette) +
   expand_limits(y = -3) +
   theme_classic()
 ```
-Bu grafikte, kalite, güvenlik, sürdürülebilirlik, erişilebilirlik ve uygun fiyat kriterlerinde 113 ülkenin performansını değerlendirmek üzere genel skorlar oluşturulmuştur. Bu genel skorlar, her bir kriterin ortalaması alınarak elde edilmiştir. Bu kapsamlı analiz, ülkelerin genel sıralamasını belirlemede önemli bir ölçüt sunmaktadır 
 
 ![bargraph](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/1a1aacb5-0485-4dfa-8cd7-2df7300162e8)
 
 Dünya çapında kalite ve güvenlik konularında öne çıkan en üst 20 ülke, bar grafiği ile görselleştirilmiştir. Bu çerçevede, kalite ve güvenlik performansı açısından en önde gelen ülkeler arasında Kanada, Danimarka ve ABD öne çıkmaktadır. Bu ülkeler, uluslararası standartlarda üst düzey kalite yönetimi ve etkili güvenlik politikaları ile dikkat çekmekte, küresel çapta güvenilirlik ve kalite anlamında lider konumda bulunmaktadır
+```{r}
 
+gfsi <- data3 %>% 
+  ggplot(aes(x = reorder(Country, qualityandsafety), y = qualityandsafety, fill = continent)) + 
+  geom_flag(y = -3, aes(image = iso2)) +
+  geom_bar(stat = "identity") + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+ 
+  labs(
+    title = "Ülke ve Kıta Bazında Kalite ve Güvenlik",
+    x = "Ülkeler",
+    y = "Kalite ve Güvenlik",
+    fill = "Kıta"
+  )
+
+my_palette <- c("Amerika" = "#E57EA7", "Asya" = "#7E8AC2", "Avrupa" = "#F8AA2C", "Okyanusya" = "#8EBE64", "Afrika" = "#0084ff")
+
+gfsi + scale_fill_manual(values = my_palette) +
+  coord_flip() +
+  expand_limits(y = -3) +
+  theme_classic()
+
+```
 ![bargraph2](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/9e13fb33-803b-4572-b1f8-786f040b8e81)
 
 Dünya genelinde kalite ve güvenlik konularında zayıf performans gösteren en kötü 20 ülke, ilgi çekici grafiklerle ele alınmıştır. Bu bağlamda, kalite ve güvenlik başlıklarında en düşük performans sergileyen ülkeler sıralamasında öne çıkanlar Madagaskar, Haiti ve Gine olmuştur. Bu ülkeler, uluslararası standartlarda daha fazla çaba harcama gerekliliği olan alanlarda, kalite ve güvenlik konularında gelişim imkanlarına odaklanmak zorundadır
