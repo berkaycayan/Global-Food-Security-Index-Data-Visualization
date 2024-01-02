@@ -31,7 +31,51 @@ Bir ülkenin iklim değişikliği etkilerine maruz kalma durumunu değerlendirir
 
 
 # Grafikler 
+```
+gfsi$score_category <- cut(gfsi$`Overall score`, breaks = c(30, 40, 50, 60, 70, 80, 90, 100),
+                           labels = c("30-40", "40-50", "50-60", "60-70", "70-80", "80-90", "90+"),
+                           include.lowest = TRUE)
 
+# Renk skalası tanımları
+renk_skalasi <- scale_fill_manual(
+  name = "Genel Skor",
+  values = c("30-40" = "#D4D66C", "40-50" = "#8EBF64", "50-60" = "#6EC0BC", 
+             "60-70" = "#5597C2", "70-80" = "#566D98", "80-90" = "#275789", "90+" = "#244994")
+)
+
+# Harita oluşturma
+ggplot() +
+  geom_map(
+    data = world_coordinates, map = world_coordinates,
+    aes(x = long, y = lat, map_id = region),
+    color = "white", size = 0.5
+  ) +
+  
+  geom_map(
+    data = gfsi,
+    map = world_coordinates,
+    aes(fill = score_category, map_id = Country), 
+    color = "white", size = 0.5
+  ) +
+  
+  coord_fixed(ratio = 1.5) +
+  
+  renk_skalasi +  # Önce tanımlanan renk skalasını ekleyin
+  
+  labs(title = "Dünya Haritasi", fill = "Genel Skor", x = "", y = "") +
+  
+  theme_classic() +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    plot.margin = unit(c(0, 0, 0, 0), "cm")
+  )
+
+
+
+```
 ![dunyaharitasi](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/0c4fbe29-5eda-4650-80cd-4ba4330f0611)
 
 Bu grafikte, kalite, güvenlik, sürdürülebilirlik, erişilebilirlik ve uygun fiyat kriterlerinde 113 ülkenin performansını değerlendirmek üzere genel skorlar oluşturulmuştur. Bu genel skorlar, her bir kriterin ortalaması alınarak elde edilmiştir. Bu kapsamlı analiz, ülkelerin genel sıralamasını belirlemede önemli bir ölçüt sunmaktadır 
