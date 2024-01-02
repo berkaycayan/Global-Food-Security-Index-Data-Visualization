@@ -34,7 +34,7 @@ Bir ülkenin iklim değişikliği etkilerine maruz kalma durumunu değerlendirir
 
 ![dunyaharitasi](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/0c4fbe29-5eda-4650-80cd-4ba4330f0611)
 
-Bu grafik, kalite ve güvenlik, sürdürülebilirlik, erişebilirlik ve uygun fiyat kriterlerinde toplamda 113 ülkenin performansını değerlendirmek üzere ortalamalar alınarak genel bir skor oluşturulmuştur. Bu kapsamlı değerlendirme, ülkelerin genel sıralamasını belirlemede önemli bir ölçüt sunmaktadır 
+Bu grafikte, kalite, güvenlik, sürdürülebilirlik, erişilebilirlik ve uygun fiyat kriterlerinde 113 ülkenin performansını değerlendirmek üzere genel skorlar oluşturulmuştur. Bu genel skorlar, her bir kriterin ortalaması alınarak elde edilmiştir. Bu kapsamlı analiz, ülkelerin genel sıralamasını belirlemede önemli bir ölçüt sunmaktadır 
 
 ![bargraph](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/1a1aacb5-0485-4dfa-8cd7-2df7300162e8)
 
