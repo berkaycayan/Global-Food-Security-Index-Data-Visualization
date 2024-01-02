@@ -32,24 +32,30 @@ Bir ülkenin iklim değişikliği etkilerine maruz kalma durumunu değerlendirir
 
 # Grafikler 
 
+![dunyaharitasi](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/0c4fbe29-5eda-4650-80cd-4ba4330f0611)
 
+Bu grafik, kalite ve güvenlik, sürdürülebilirlik, erişebilirlik ve uygun fiyat kriterlerinde toplamda 113 ülkenin performansını değerlendirmek üzere ortalamalar alınarak genel bir skor oluşturulmuştur. Bu kapsamlı değerlendirme, ülkelerin genel sıralamasını belirlemede önemli bir ölçüt sunmaktadır 
 
 ![bargraph](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/1a1aacb5-0485-4dfa-8cd7-2df7300162e8)
 
-Burada Dünya genelinde en iyi 20 ülke Kalite ve Güvenlik konusunda görselleştirilmiştir bu ülkelerden Kalite ve güvenlik başlıgında en iyi ülkeler Kanada, Danimarka ve ABD çıkmıştır
+Dünya çapında kalite ve güvenlik konularında öne çıkan en üst 20 ülke, bar grafiği ile görselleştirilmiştir. Bu çerçevede, kalite ve güvenlik performansı açısından en önde gelen ülkeler arasında Kanada, Danimarka ve ABD öne çıkmaktadır. Bu ülkeler, uluslararası standartlarda üst düzey kalite yönetimi ve etkili güvenlik politikaları ile dikkat çekmekte, küresel çapta güvenilirlik ve kalite anlamında lider konumda bulunmaktadır
 
 ![bargraph2](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/9e13fb33-803b-4572-b1f8-786f040b8e81)
 
-Burada ise genelinde en kötü 20 ülke Kalite ve Güvenlik konusunda görselleştirilmiştir bu ülkelerden en kötüleri sırasıyla Madagaskar, Haiti ve Gine olmuştur 
+Dünya genelinde kalite ve güvenlik konularında zayıf performans gösteren en kötü 20 ülke, ilgi çekici grafiklerle ele alınmıştır. Bu bağlamda, kalite ve güvenlik başlıklarında en düşük performans sergileyen ülkeler sıralamasında öne çıkanlar Madagaskar, Haiti ve Gine olmuştur. Bu ülkeler, uluslararası standartlarda daha fazla çaba harcama gerekliliği olan alanlarda, kalite ve güvenlik konularında gelişim imkanlarına odaklanmak zorundadır
 
-![dunyaharitasi](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/0c4fbe29-5eda-4650-80cd-4ba4330f0611)
+![gıdasatın](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/d5050e3a-ead8-4537-8205-67a2651a46c5)
 
-![boxplot orange](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/6eb5fdf7-4f7f-4f66-aef3-1555d80506b5)
 
-![00031](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/3671c8a1-b98c-4cfe-9856-034b29e85167)
+Bu grafikte, kıtalara göre ülkelerin gıda satın alma güçleri kıyaslanmıştır. Kıta isimleri yanında parantez içinde bulunan sayılar, her kıtada kaç adet ülkenin yer aldığını göstermektedir. En yüksek ortalama gıda satın alma gücüne sahip kıtalar arasında Okyanusya ve Avrupa öne çıkmaktadır. Bu durum, bu kıtalardaki ülkelerin ekonomik güç ve gıda satın alma gücü açısından öne çıktığını göstermektedir
+
+![loli](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/2756956f-86d6-48c0-8a58-fdd9db04d1c3)
+
+Bu analizde, lolipop grafiği kullanılarak gıdanın uygun olduğu ülkeler sıralanmıştır. Grafikteki 20 ülke arasında en uygun olanlar Japonya, Çin ve Singapur olarak öne çıkarken, en düşük uygunluk seviyesine sahip olanlar ise Suriye, Yemen ve Kamerun'dur. Bu görselleştirme, gıda uygunluğu açısından dünya genelindeki ülkeler arasındaki çeşitliliği vurgulamakta ve bu alandaki performansları öne çıkarmaktadır
 
 ![scatter plot](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/a55e759e-85bd-411e-aee1-e0ee85681763)
 
+Bu grafikte, Scatter plot yöntemi kullanılarak ülkelerin kıtalara göre sürdürülebilirlik ve adaptasyon durumları detaylı bir şekilde incelenmiştir. Bu analizde, en iyi durumda olan kıta açık ara Avrupa olarak öne çıkmaktadır. Sürdürülebilirlik konusunda öncü ülkeler arasında Norveç, Finlandiya ve Yeni Zelanda gibi ülkeler yer alırken, maalesef en düşük sürdürülebilirlik politikasına sahip olan ülkeler arasında Paraguay, Botsvana ve Kamboçya bulunmaktadır. Bu görselleştirme, kıtalara göre sürdürülebilirlik ve adaptasyon konularındaki farklılıkları vurgulayarak, ülkeler arasındaki çeşitliliği anlamamıza yardımcı olmaktadır
 
 
 
