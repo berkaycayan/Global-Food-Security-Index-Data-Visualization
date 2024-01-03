@@ -69,6 +69,159 @@ library(ggplot2)
 library(dplyr)
 library(maps)
 ```
+### Gerekli Filtrelemeler ve isim değişikliği 
+```{r}
+world_coordinates <- map_data("world")
+
+mismatches <- setdiff(gfsi$Country, world_coordinates$region)
+mismatches
+
+gfsi$Country <- gsub("United Kingdom", "UK", gfsi$Country)
+gfsi$Country <- gsub("United States", "USA", gfsi$Country)
+gfsi$Country <- gsub("Côte d'Ivoire", "Ivory Coast", gfsi$Country)
+gfsi$Country <- gsub("Democratic Republic of Congo", "Congo", gfsi$Country)
+data2 <- filter(gfsi, `Overall score` > 75.5)
+data3 <- filter(gfsi, `Overall score` < 47.7)
+
+datalolipop1 <- filter(gfsi, `Availability` > 71.5)
+datalolipop2 <- filter(gfsi, `Availability` < 41.4)
+datalolipop <- rbind(datalolipop1, datalolipop2)
+
+data4 <- filter(gfsi, `Availability` > 71.5)
+data5 <- filter(gfsi, `Availability` < 41.4)
+
+data6 <- filter(gfsi, `Sustainability and Adaptation` > 69.5)
+data7 <- filter(gfsi, `Sustainability and Adaptation` < 38.4)
+colnames(data6)[colnames(data6) == "Sustainability and Adaptation"] <- "SustainabilityandAdaptation"
+colnames(data7)[colnames(data7) == "Sustainability and Adaptation"] <- "SustainabilityandAdaptation"
+
+data2$iso2 <- countrycode(data2$Country, "country.name", "iso2c")
+data2$continent <- countrycode(data2$iso2, "iso2c", "continent")
+
+data2$continent[data2$continent == "Americas"] <- "Amerika"
+data2$continent[data2$continent == "Asia"] <- "Asya"
+data2$continent[data2$continent == "Europe"] <- "Avrupa"
+data2$continent[data2$continent == "Oceania"] <- "Okyanusya"
+data2$Country[data2$Country == "Canada"] <- "Kanada"
+data2$Country[data2$Country == "Denmark"] <- "Danimarka"
+data2$Country[data2$Country == "USA"] <- "Amerika Birleşik Devletleri"
+data2$Country[data2$Country == "Finland"] <- "Finlandiya"
+data2$Country[data2$Country == "Belgium"] <- "Belçika"
+data2$Country[data2$Country == "France"] <- "Fransa"
+data2$Country[data2$Country == "Norway"] <- "Norveç"
+data2$Country[data2$Country == "Ireland"] <- "İrlanda"
+data2$Country[data2$Country == "Sweden"] <- "İsveç"
+data2$Country[data2$Country == "Netherlands"] <- "Hollanda"
+data2$Country[data2$Country == "Spain"] <- "İspanya"
+data2$Country[data2$Country == "Austria"] <- "Avusturya"
+data2$Country[data2$Country == "Germany"] <- "Almanya"
+data2$Country[data2$Country == "Portugal"] <- "Portekiz"
+data2$Country[data2$Country == "Costa Rica"] <- "Kosta Rika"
+data2$Country[data2$Country == "Japan"] <- "Japonya"
+data2$Country[data2$Country == "Czech Republic"] <- "Çek Cumhuriyeti"
+data2$Country[data2$Country == "Switzerland"] <- "İsviçre"
+data2$Country[data2$Country == "New Zealand"] <- "Yeni Zelanda"
+
+data3$iso2 <- countrycode(data3$Country, "country.name", "iso2c")
+data3$continent <- countrycode(data3$iso2, "iso2c", "continent")
+data3$continent[data3$continent == "Americas"] <- "Amerika"
+data3$continent[data3$continent == "Asia"] <- "Asya"
+data3$continent[data3$continent == "Europe"] <- "Avrupa"
+data3$continent[data3$continent == "Oceania"] <- "Okyanusya"
+data3$continent[data3$continent == "Africa"] <- "Afrika"
+data3$Country[data3$Country == "Ethiopia"] <- "Etiyopya"
+data3$Country[data3$Country == "Cameroon"] <- "Kamerun"
+data3$Country[data3$Country == "Nigeria"] <- "Nijerya"
+data3$Country[data3$Country == "Zambia"] <- "Zambiya"
+data3$Country[data3$Country == "Syria"] <- "Suriye"
+data3$Country[data3$Country == "Niue"] <- "Niyu"
+data3$Country[data3$Country == "Chad"] <- "Çad"
+data3$Country[data3$Country == "Ivory Coast"] <- "Fildişi Sahili"
+data3$Country[data3$Country == "Congo"] <- "Kongo"
+data3$Country[data3$Country == "Sierra Leone"] <- "Sierra Leone"
+data3$Country[data3$Country == "Mozambique"] <- "Mozambik"
+data3$Country[data3$Country == "Guinea"] <- "Gine"
+data3$Country[data3$Country == "Madagascar"] <- "Madagaskar"
+
+data4$Country[data4$Country == "Japan"] <- "Japonya"
+data4$Country[data4$Country == "China"] <- "Çin"
+data4$Country[data4$Country == "Singapore"] <- "Singapur"
+data4$Country[data4$Country == "Portugal"] <- "Portekiz"
+data4$Country[data4$Country == "Switzerland"] <- "İsviçre"
+data4$Country[data4$Country == "Canada"] <- "Kanada"
+data4$Country[data4$Country == "United Arab Emirates"] <- "Birleşik Arap Emirlikleri"
+data4$Country[data4$Country == "Costa Rica"] <- "Kosta Rika"
+data4$Country[data4$Country == "Qatar"] <- "Katar"
+data4$Country[data4$Country == "UK"] <- "Birleşik Krallık"
+data5$Country[data5$Country == "Congo"] <- "Kongo"
+data5$Country[data5$Country == "Botswana"] <- "Botsvana"
+data5$Country[data5$Country == "Chad"] <- "Çad"
+data5$Country[data5$Country == "Nigeria"] <- "Nijerya"
+data5$Country[data5$Country == "Venezuela"] <- "Venezuela"
+data5$Country[data5$Country == "Sierra Leone"] <- "Sierra Leone"
+data5$Country[data5$Country == "Cameroon"] <- "Kamerun"
+data5$Country[data5$Country == "Yemen"] <- "Yemen"
+data5$Country[data5$Country == "Syria"] <- "Suriye"
+
+datalolipop$Country[datalolipop$Country == "Japan"] <- "Japonya"
+datalolipop$Country[datalolipop$Country == "China"] <- "Çin"
+datalolipop$Country[datalolipop$Country == "Singapore"] <- "Singapur"
+datalolipop$Country[datalolipop$Country == "Portugal"] <- "Portekiz"
+datalolipop$Country[datalolipop$Country == "Switzerland"] <- "İsviçre"
+datalolipop$Country[datalolipop$Country == "Canada"] <- "Kanada"
+datalolipop$Country[datalolipop$Country == "United Arab Emirates"] <- "Birleşik Arap Emirlikleri"
+datalolipop$Country[datalolipop$Country == "Costa Rica"] <- "Kosta Rika"
+datalolipop$Country[datalolipop$Country == "Qatar"] <- "Katar"
+datalolipop$Country[datalolipop$Country == "UK"] <- "Birleşik Krallık"
+datalolipop$Country[datalolipop$Country == "Congo"] <- "Kongo"
+datalolipop$Country[datalolipop$Country == "Botswana"] <- "Botsvana"
+datalolipop$Country[datalolipop$Country == "Chad"] <- "Çad"
+datalolipop$Country[datalolipop$Country == "Nigeria"] <- "Nijerya"
+datalolipop$Country[datalolipop$Country == "Venezuela"] <- "Venezuela"
+datalolipop$Country[datalolipop$Country == "Sierra Leone"] <- "Sierra Leone"
+datalolipop$Country[datalolipop$Country == "Cameroon"] <- "Kamerun"
+datalolipop$Country[datalolipop$Country == "Yemen"] <- "Yemen"
+datalolipop$Country[datalolipop$Country == "Syria"] <- "Suriye"
+
+data6$iso2 <- countrycode(data6$Country, "country.name", "iso2c")
+data6$continent <- countrycode(data6$iso2, "iso2c", "continent")
+data7$iso2 <- countrycode(data7$Country, "country.name", "iso2c")
+data7$continent <- countrycode(data7$iso2, "iso2c", "continent")
+
+data7$continent[data7$continent == "Americas"] <- "Amerika"
+data7$continent[data7$continent == "Asia"] <- "Asya"
+data7$continent[data7$continent == "Europe"] <- "Avrupa"
+data7$continent[data7$continent == "Oceania"] <- "Okyanusya"
+data7$continent[data7$continent == "Africa"] <- "Afrika"
+
+data6$continent[data6$continent == "Americas"] <- "Amerika"
+data6$continent[data6$continent == "Asia"] <- "Asya"
+data6$continent[data6$continent == "Europe"] <- "Avrupa"
+data6$continent[data6$continent == "Oceania"] <- "Okyanusya"
+data6$continent[data6$continent == "Africa"] <- "Afrika"
+data6$Country[data6$Country == "Norway"] <- "Norveç"
+data6$Country[data6$Country == "Finland"] <- "Finlandiya"
+data6$Country[data6$Country == "New Zealand"] <- "Yeni Zelanda"
+data6$Country[data6$Country == "Ireland"] <- "İrlanda"
+data6$Country[data6$Country == "Costa Rica"] <- "Kosta Rika"
+data6$Country[data6$Country == "United Kingdom"] <- "Birleşik Krallık"
+data6$Country[data6$Country == "UK"] <- "Birleşik Krallık"
+data6$Country[data6$Country == "Germany"] <- "Almanya"
+data6$Country[data6$Country == "France"] <- "Fransa"
+data6$Country[data6$Country == "Czech Republic"] <- "Çek Cumhuriyeti"
+data6$Country[data6$Country == "Austria"] <- "Avusturya"
+data7$Country[data7$Country == "El Salvador"] <- "El Salvador"
+data7$Country[data7$Country == "Pakistan"] <- "Pakistan"
+data7$Country[data7$Country == "Serbia"] <- "Sırbistan"
+data7$Country[data7$Country == "Chad"] <- "Çad"
+data7$Country[data7$Country == "Sudan"] <- "Sudan"
+data7$Country[data7$Country == "Haiti "] <- "Haiti"
+data7$Country[data7$Country == "Cambodia"] <- "Kamboçya"
+data7$Country[data7$Country == "Botswana"] <- "Botsvana"
+data7$Country[data7$Country == "Paraguay"] <- "Paraguay"
+
+```
+
 ## Grafikler
 
 ### Dünya Haritası Grafiği
