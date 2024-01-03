@@ -201,9 +201,48 @@ ggplot(gfsi, aes(x = Affordability, y = continent, fill = continent)) +
 
 Bu grafikte, kıtalara göre ülkelerin gıda satın alma güçleri kıyaslanmıştır. Kıta isimleri yanında parantez içinde bulunan sayılar, her kıtada kaç adet ülkenin yer aldığını göstermektedir. En yüksek ortalama gıda satın alma gücüne sahip kıtalar arasında Okyanusya ve Avrupa öne çıkmaktadır. Bu durum, bu kıtalardaki ülkelerin ekonomik güç ve gıda satın alma gücü açısından öne çıktığını göstermektedir
 
+### Lolipop Grafiği
+```{r}
+
+color_palette1 <- c("#E41A1C", "#377EB8")
+
+ggplot(datalolipop, aes(x = reorder(Country, Availability), y = Availability)) +
+  geom_segment(aes(x = reorder(Country, Availability), xend = reorder(Country, Availability), y = 0, yend = Availability), color = color_palette1[1]) +
+  geom_point(color = color_palette1[2], size = 4, alpha = 0.6) +
+  global_food_theme +  # Global food theme'i uygula
+  coord_flip() +
+  labs(x = "Ülkeler", y = "Erişebilirlik",
+       title = "Ülke Bazında Erişebilirlik") +
+  ylim(0, 100) +  
+  scale_color_manual(values = color_palette1)  # 
+theme_classic()
+```
 ![loli](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/2756956f-86d6-48c0-8a58-fdd9db04d1c3)
 
 Bu analizde, lolipop grafiği kullanılarak gıdanın uygun olduğu ülkeler sıralanmıştır. Grafikteki 20 ülke arasında en uygun olanlar Japonya, Çin ve Singapur olarak öne çıkarken, en düşük uygunluk seviyesine sahip olanlar ise Suriye, Yemen ve Kamerun'dur. Bu görselleştirme, gıda uygunluğu açısından dünya genelindeki ülkeler arasındaki çeşitliliği vurgulamakta ve bu alandaki performansları öne çıkarmaktadır
+
+### Saçılım Grafiği
+
+```{r}
+scatter_plot <- ggplot(data6, aes(x = SustainabilityandAdaptation, y = reorder(Country, SustainabilityandAdaptation), color = continent)) +
+  geom_point(size = 4, alpha = 1) +  # alpha parametresini 1'e çıkardık (tam opak)
+  labs(title = "Sürdürülebilirlik ve Adaptasyon Scatter Plot",  x = "", y = "", color = "Kıta") +
+  scale_color_manual(values = c("Amerika" = "#E57EA7", "Asya" = "#7E8AC2", "Avrupa" = "#F8AA2C", "Okyanusya" = "#8EBE64", "Afrika" = "#0084ff")) +
+  theme_minimal() +
+  scale_x_continuous(limits = c(30, 90))
+
+scatter_plot2 <- ggplot(data7, aes(x = SustainabilityandAdaptation, y = reorder(Country, SustainabilityandAdaptation), color = continent)) +
+  geom_point(size = 4, alpha = 1) +  # alpha parametresini 1'e çıkardık (tam opak)
+  labs(title = "", x = "Sürdürülebilirlik ve Adaptasyon", y = "Ülkeler", color = "Kıta") +
+  scale_color_manual(values = c("Amerika" = "#E57EA7", "Asya" = "#7E8AC2", "Avrupa" = "#F8AA2C", "Okyanusya" = "#8EBE64", "Afrika" = "#0084ff")) +
+  theme_minimal() +
+  scale_x_continuous(limits = c(30, 90))
+
+combined_plot <- scatter_plot / scatter_plot2 + plot_layout(ncol = 1)
+
+print(combined_plot)
+
+```
 
 ![scatterplot](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/aaa49088-7a0c-48bc-9d71-72c46719db2f)
 
