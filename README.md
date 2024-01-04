@@ -397,7 +397,8 @@ print(combined_plot)
 
 ```
 
-![scatterplot](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/aaa49088-7a0c-48bc-9d71-72c46719db2f)
+![sacatter](https://github.com/berkaycayan/Global-Food-Security-Index-Data-Visualization/assets/130244458/438a3648-da29-43d3-902c-355e87a19c4b)
+
 
 
 Bu grafikte, Scatter plot yöntemi kullanılarak ülkelerin kıtalara göre sürdürülebilirlik ve adaptasyon durumları detaylı bir şekilde incelenmiştir. Bu analizde, en iyi durumda olan kıta açık ara Avrupa olarak öne çıkmaktadır. Sürdürülebilirlik konusunda öncü ülkeler arasında Norveç, Finlandiya ve Yeni Zelanda gibi ülkeler yer alırken, maalesef en düşük sürdürülebilirlik politikasına sahip olan ülkeler arasında Paraguay, Botsvana ve Kamboçya bulunmaktadır. Bu görselleştirme, kıtalara göre sürdürülebilirlik ve adaptasyon konularındaki farklılıkları vurgulayarak, ülkeler arasındaki çeşitliliği anlamamıza yardımcı olmaktadır
